@@ -1,7 +1,7 @@
 {
-  "name": "web_cv",
+  "name": "front",
   "version": "1.0.0",
-  "description": "resume about Riccardo Amadio",
+  "description": "Light,simply routing framework for frontend",
   "main": "app.js",
   "author": "Riccardo Amadio",
   "license": "MIT",
