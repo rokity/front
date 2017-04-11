@@ -1,0 +1,11 @@
+{
+  "name": "web_cv",
+  "version": "1.0.0",
+  "description": "resume about Riccardo Amadio",
+  "main": "app.js",
+  "author": "Riccardo Amadio",
+  "license": "MIT",
+  "scripts":{
+	"start":"node app.js"
+	}
+}
