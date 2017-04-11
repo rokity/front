@@ -1,5 +1,5 @@
 # front
-A fast and essential framework for serving your frontend.
+A fast and essential framework for serving your front-end.
 
 # TODO
     1. Handlers/Controllers with JSON
