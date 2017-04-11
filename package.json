@@ -5,7 +5,8 @@
   "main": "app.js",
   "author": "Riccardo Amadio",
   "license": "MIT",
-  "scripts":{
-	"start":"node app.js"
-	}
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {}
 }
