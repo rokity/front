@@ -1,21 +1,11 @@
-'use strict'
 
-/* var Route = require('./lib/route')
- var home = new Route("/home", "home.html")
-var about = new Route("/about", "about.html")
 
-var Routes = require('./lib/routes')
-var routes = new Routes()
+const server = require('./lib');
 
- console.log(routes.getRoute("/"))
-console.log(routes.getRoute("/home")) */
+const Route = server.route;
+const home = new Route('/home', 'index.html');
 
-var server = require('./lib')
+const routes = server.routes;
+routes.add(home);
 
-var Route = server.route
-var home = new Route('/home', 'index.html')
-
-var routes = server.routes
-routes.add(home)
-
-server.start(routes, 3000)
+server.start(routes, 3000);
