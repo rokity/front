@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node client.js",
-    "eslint": "./node_modules/.bin/eslint --fix client.js lib/** lib/routing/** "
+    "eslint": "./node_modules/.bin/eslint --fix client.js lib/** lib/routing/**.js "
   },
   "dependencies": {},
   "devDependencies": {
