@@ -11,7 +11,7 @@ var index = new Route('/',(req,res) =>{    res.end("STOCAZZOOO"); });
 routes.add(index);
 server.static('static', 'static');
 
-server.setViewPath("cane");
-console.log(server.viewPath);
+server.setViewPath("view");
+//console.log(server.viewPath);
 
 server.start(routes, 3000);
