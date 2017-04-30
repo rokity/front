@@ -2,5 +2,7 @@
     "extends": "airbnb-base",
     "plugins": [
         "import"
-    ]
+    ],
+    "no-eval": ["error", {"allowDirect": true}]
+    
 }

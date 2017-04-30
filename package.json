@@ -9,7 +9,9 @@
     "start": "node client.js",
     "eslint": "./node_modules/.bin/eslint --fix client.js lib/** lib/routing/**.js "
   },
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.0.7"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
