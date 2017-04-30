@@ -4,10 +4,14 @@ const server = require('./lib');
 
 const Route = server.route;
 const home = new Route('/home', 'index.html');
-
-const routes = server.routes;
+var routes = server.routes;
 routes.add(home);
 
-server.static('view', 'static');
+var index = new Route('/',(req,res) =>{    res.end("STOCAZZOOO"); });
+routes.add(index);
+server.static('static', 'static');
+
+server.setViewPath("cane");
+console.log(server.viewPath);
 
 server.start(routes, 3000);

@@ -1,1 +1,1 @@
-{"/home":{"url":"/home","view":"index.html"}}
+{"/home":{"url":"/home","view":"index.html"},"/":{"url":"/","callback":"/Function((req,res) =>{    res.end(\"STOCAZZOOO\"); })/"}}
