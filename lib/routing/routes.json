@@ -1,1 +1,0 @@
-{"/home":{"url":"/home","view":"index.html","context":{"title":"STOCAZZO","body":"AMBE"}},"/":{"url":"/","callback":"/Function((req, res) => { res.end('STOCAZZOOO'); })/"}}
