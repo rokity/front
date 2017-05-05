@@ -1,0 +1,77 @@
+<dom-module id="my-app-micro-script">
+  <template>
+  </template>
+</dom-module>
+<script type="text/javascript">
+MAX_MICRO = 4;
+
+current_micro = 0;
+micro_user_defined =[];
+
+
+function nextMicroSelection(){
+  if (!isTheLastMicro()){
+    current_micro++;
+  }
+}
+function currentMicroIsEmpty(){
+  return  (micro_user_defined[current_micro] == undefined);
+}
+
+function microWasSelected(id){
+  return  (micro_user_defined[id] != undefined);
+}
+
+function getMicroSelection(){
+  return current_micro;
+}
+
+function prevMicroSelection(){
+  if (!isTheFirstMicro()){
+    current_micro--;
+  }
+}
+
+function isTheFirstMicro(){
+  return current_micro==0;
+}
+
+function setMicroSelection(id){
+  current_micro = id;
+}
+
+function isTheLastMicro(){
+  return current_micro==MAX_MICRO-1;
+}
+
+function getMicroUserSize(){
+  return micro_user_defined.length;
+}
+
+function microUserInit(mic_user_def){
+  micro_user_defined = mic_user_def;
+}
+/**
+* add name and description of a micro inside the list.
+*/
+function microUserAdd(micro_name, micro_descr){
+  micro = {"name":micro_name,"desc":micro_descr};
+  micro_user_defined[current_micro] = micro;
+}
+
+function getMicroUser(micro){
+  return micro_user_defined[micro];
+}
+
+/**
+* Get micro user list.
+*/
+function getMicroUserList(){
+  return micro_user_defined;
+}
+
+
+
+
+
+</script>

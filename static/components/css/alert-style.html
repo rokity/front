@@ -1,0 +1,58 @@
+<dom-module id="my-app-alert-style">
+  <template>
+    <style>
+      .alert_save {
+        width: 100px;
+      }
+
+      .alert_exit {
+        width: 100px;
+      }
+
+      @media only screen and (max-width: 768px) {
+
+        #exitAlertDialog{
+          margin: 0px;
+
+        }
+        #exitAlertPaper{
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        #exitAlertPaper{
+          width: 500px;
+          max-width: 500px;
+        }
+        .buttonsalert{
+          margin-left: 50px;
+          margin-right: 50px;
+        }
+
+      }
+      #exitAlertPaper {
+        background-color: #fef2e6 !important;
+      }
+      paper-button {
+        text-transform: none;
+      }
+      paper-button {
+        border-radius: 0px !important
+      }
+      .border-green {
+        border: 2px solid rgb(6, 228, 194);
+        color: rgb(6, 228, 194) !important;
+        border-radius: 0px;
+        height: 30px;
+      }
+
+      .border-orange {
+        border: 2px solid orange;
+        color: orange !important;
+        border-radius: 0px;
+        height: 30px;
+      }
+
+    </style>
+  </template>
+</dom-module>
