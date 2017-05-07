@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "handlebars": "^4.0.7",
-    "jsdoc": "^3.4.3"
+    "jsdoc": "^3.4.3",
+     "gulp": "^3.9.1",
+    "gulp-vulcanize": "^6.1.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
