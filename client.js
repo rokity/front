@@ -26,5 +26,7 @@ routes.add(accediRoute);
 
 server.vulcanize();
 
-server.start(routes, 3000);
+const port = process.env.PORT || 8080;
+
+server.start(routes, port);
 
