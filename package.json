@@ -40,10 +40,6 @@
   },
   "readmeFilename": "README.MD",
   "main": "index.js",
-  "files": [
-    "index.js",
-    "lib/*.js"
-  ],
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
