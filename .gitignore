@@ -65,3 +65,6 @@ static
 
 # Documentation is not already for to be public
 out
+
+# File system files
+.DS_Store
