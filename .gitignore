@@ -59,12 +59,13 @@ typings/
 
 
 # My personal frontend section 
-view
-static
+view/
+
+static/
 
 
 # Documentation is not already for to be public
-out
+out/
 
 # File system files
 .DS_Store
