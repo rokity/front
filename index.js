@@ -1,9 +1,9 @@
 /** @module front */
 
-const Routes = require('./routing/routes');
-const Start = require('./start');
-const Route = require('./routing/route');
-global.static = require('./static');
+const Routes = require('./lib/routing/routes');
+const Start = require('./lib/start');
+const Route = require('./lib/routing/route');
+global.static = require('./lib/static');
 
 global.routes = new Routes();
 
@@ -20,9 +20,9 @@ module.exports.start = Start;
 module.exports.static = global.static;
 
 /**  setViewPath function */
-module.exports.setViewPath = require('./routing/switcher').setViewPath;
+module.exports.setViewPath = require('./lib/routing/switcher').setViewPath;
 
 /**  vulcanize function
      Path of the output :
      static/dist/components/ */
-module.exports.vulcanize = require('./vulcanize').vulcanize;
+module.exports.vulcanize = require('./lib/vulcanize').vulcanize;
