@@ -68,3 +68,6 @@ out/
 
 # File system files
 .DS_Store
+
+# Bower package manager
+bower.json
