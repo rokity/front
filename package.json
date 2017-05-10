@@ -4,6 +4,7 @@
   "description": "Light,simply routing framework for frontend",
   "main": "app.js",
   "author": "Riccardo Amadio",
+  "maintainers": [ { "name": "Riccardo Amadio", "email": "riccardo.amadio1@gmail.com" } ],
   "license": "MIT",
   "scripts": {
     "start": "node client.js",
@@ -15,6 +16,14 @@
      "gulp": "^3.9.1",
     "gulp-vulcanize": "^6.1.0"
   },
+  "keywords": [ "polymer", "frontend", "front-end" , "light" ,"fast" , "gzip" , "vulcanize" , "handlebars" ],
+  "repository":
+   { "url": "https://github.com/rokity/front",
+     "type": "git" },
+      "bugs": { "url": "https://github.com/rokity/front/issue" },
+      "readmeFilename": "README.MD",
+      "main": "index.js",
+      "files": [ "index.js", "lib/*.js"],
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
