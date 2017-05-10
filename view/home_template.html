@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height, minimal-ui">
+    
+   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <script src="static/bower_components/webcomponentsjs/webcomponents-lite.js"></script>    
+      <title>{{title}}</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="static/components/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="static/components/images/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="static/manifest.json">
+    <link rel="mask-icon" href="static/components/images/safari-pinned-tab.svg" color="#ff8524">
+    <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="import" href="{{elementUrl}}">
+
+	 <style>
+	 html{
+			background-color: rgb(254, 244, 234) !important;
+
+	 }
+   *{
+     font-family: 'Open Sans' !important;
+
+   }
+	 </style>
+
+   <!-- MOBISCROLL PLUGIN STYLE 
+      <link  href="/bower_components/mobiscroll/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css">
+      <link  href="/bower_components/mobiscroll/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.frame.jqm.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.frame.wp.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.scroller.android-holo.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.scroller.jqm.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.scroller.wp.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.image.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.android-holo-light.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.wp-light.css" rel="stylesheet" type="text/css" />
+      <link href="/bower_components/mobiscroll/css/mobiscroll.mobiscroll-dark.css" rel="stylesheet" type="text/css" />
+      -->
+  </head>
+  <body style="background-color:rgb(254, 244, 234);">
+  <style is="custom-style">
+     iron-overlay-backdrop {
+       --iron-overlay-backdrop-background-color: rgba(0, 0, 0, .7); 
+       --iron-overlay-backdrop-opacity: .6
+     }
+    </style>
+   
+   {{{element}}}
+
+
+  </body>
+</html>

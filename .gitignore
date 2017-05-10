@@ -58,9 +58,7 @@ typings/
 .env
 
 
-# My personal frontend section 
-view/
-static/
+
 
 
 # Documentation is not already for to be public
@@ -69,5 +67,3 @@ out/
 # File system files
 .DS_Store
 
-# Bower package manager
-bower.json

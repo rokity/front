@@ -1,0 +1,101 @@
+<dom-module id="my-app-global-script">
+  <template>
+  </template>
+</dom-module>
+<script type="text/javascript">
+var SITE_NAME        = "mha";
+var SITE_NAME_FULL   = "MyHomeAgenda";
+var HOME_TITLE       = "Home";
+var REGISTRATI_TITLE = "Registrati";
+var ACCEDI_TITLE     = "Accedi";
+var REG_WORKER_TITLE = "Reg. Lavor.";
+var REG_USER_TITLE   = "Reg. Utente";
+var PROFILE_TITLE    = "Profile";
+var PACKAGES_TITLE   = "Packages";
+var FEEDBACK_TITLE   = "Feedback";
+var CODICE_MAIL_TITLE= "Codice e-mail";
+
+
+var HOME_PAGE        = "/home";
+var REGISTRATI_PAGE  = "/registrati";
+var ACCEDI_PAGE      = "/accedi";
+var REG_WORKER_PAGE  = "/regworker";
+var REG_USER_PAGE    = "/reguser";
+var PROFILE_PAGE     = "/profile";
+var PACKAGES_PAGE    = "/packages";
+var FEEDBACK_PAGE    = "/feedback";
+var CODICE_EMAIL     ="/codice-mail";
+
+var pcd_opened = false;
+/**
+* Adjust the title.
+*/
+function changeTitle(title){
+  if (title==HOME_TITLE){
+      return SITE_NAME_FULL;
+  }
+  // change site name.
+  return title +" - "+SITE_NAME;
+}
+/**
+* Change page title and the url.
+*/
+function changeUrl( title, url ){
+  changeTitlePage(title);
+  if (typeof (history.pushState) != "undefined") {
+      var obj = { Title: title, Url: url };
+      history.pushState(obj, obj.Title, obj.Url);
+  } else {
+      console.log("Browser does not support HTML5.");
+  }
+}
+/**
+* Change only the page title
+*/
+function changeTitlePage(title){
+  document.title = changeTitle(title);
+}
+
+function isBetween(){
+  var arg = arguments[0];
+
+  for (var i = 1; i < arguments.length; i++) {
+     if (arg.localeCompare(arguments[i])==0){
+       console.log("È VERO!:"+arguments[i])
+       return true;
+     }
+   }
+
+   return false;
+}
+function exec(){
+  var name = arguments[0];
+  for (var i = 1; i < arguments.length; i++) {
+     if (arg==arguments[i]){
+       arguments[i+1]();
+     }
+   }
+   return false;
+}
+
+function paperalert(message){
+  $("#paperalert").prop("text",message);
+  $("#paperalert").prop("duration","0");
+  $("#paperalertclose").css("display","inherit");
+
+  document.querySelector('paper-toast').open();
+}
+function paperclose(){
+  document.querySelector('paper-toast').close();
+}
+
+function papernotify(message){
+  $("#paperalert").prop("text",message);
+  $("#paperalert").prop("duration","5000");
+  $("#paperalertclose").css("display","none");
+
+  document.querySelector('paper-toast').open();
+}
+
+
+</script>

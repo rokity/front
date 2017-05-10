@@ -1,0 +1,39 @@
+<dom-module id="my-app-accedi-script" >
+  <template>
+      </template>
+      <script>
+function checkEmail(){
+      var form=document.getElementById('formAccedi');
+      form.addEventListener('iron-form-submit', function(event) {
+        var dialog=document.getElementById('spinnerAccedi');
+        dialog.positionTarget=form;
+        dialog.open();
+      });
+      form.addEventListener('iron-form-response', function(event) {
+        if(event.detail.response.password){
+        var dialog=document.getElementById('spinnerAccedi');
+        dialog.close();
+        document.getElementById("accediDialog").close();
+      }
+      else{
+        var dialog=document.getElementById('spinnerAccedi');
+        dialog.positionTarget=form;
+        dialog.close();
+        document.getElementById('errorAccedi').innerHTML= "Email e Password Incorrette";
+        var dialogError=document.getElementById('errorDialogAccedi');
+        dialogError.positionTarget=form;
+        dialogError.open();
+      }
+      });
+      form.addEventListener('iron-form-error', function(event) {
+        document.getElementById('errorAccedi').innerHTML= event.detail.request.xhr.response.message;
+        var dialog=document.getElementById('spinnerAccedi');
+        dialog.close();
+        var dialogError=document.getElementById('errorDialogAccedi');
+        dialogError.positionTarget=form;
+        dialogError.open();
+      });
+      document.getElementById('formAccedi').submit();
+}
+</script>
+</dom-module>

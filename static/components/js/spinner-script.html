@@ -1,0 +1,29 @@
+<dom-module id="my-app-spinner-script">
+  <template>
+  </template>
+</dom-module>
+<script type="text/javascript">
+var SPINNER_HOME    = "spinnerHome";
+var SPINNER_DEFAULT;
+var loading;
+
+function initLoadingPage(def_spinner){
+  SPINNER_DEFAULT = def_spinner ;
+}
+
+function openLoadingPage(){
+  loading = document.getElementById(SPINNER_DEFAULT);
+  Polymer.updateStyles({
+  '--iron-overlay-backdrop-background-color': 'red',
+  '--iron-overlay-backdrop-opacity': '.6'
+  });
+  loading.positionTarget = document.querySelector("my-app-app");
+  loading.sizingTarget = document.querySelector("my-app-app");
+  loading.open();
+}
+
+function closeLoadingPage(){
+  loading.close();
+}
+
+</script>

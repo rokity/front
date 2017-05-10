@@ -1,0 +1,159 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/app-layout/app-layout.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+
+<link rel="import"  href="home/home-style.html">
+<link rel="import" href="css/global-style.html">
+<link rel="import" href="js/global-script.html">
+<link rel="import" href="images/icone.html">
+
+
+
+<dom-module id="my-app-home" >
+  <template>
+  
+
+  <!--<div class="vertical-section-container centered">-->
+  <app-drawer-layout force-narrow fullbleed>
+    <style include="my-app-home-style"></style>
+  <style include="my-app-global-style"></style>
+
+ 
+<app-drawer>
+  drawer-content
+</app-drawer>
+<paper-header-panel class="flex">
+  <paper-toolbar class="navbar medium" justify="justified">
+      <iron-icon  icon="reorder" drawer-toggle></iron-icon> 
+
+      <paper-toolbar class="navbar">
+
+        <a id="registrati" onclick="registrati(this)" style="z-index:10;"><paper-button toggle>Registrati</paper-button></a>
+        <a id="accedi"     on-click="accedi" style="z-index:10;"><paper-button toggle>Accedi</paper-button></a>
+
+      </paper-toolbar>
+  </paper-toolbar>
+</paper-header-panel>
+
+  <div  id="container" class="fit layout vertical center-justified">
+    <iron-image sizing="cover" id="example-sizing-cover"
+    alt="My Home Agenda page" class="self-center" src="https://gzipmha.herokuapp.com/static/components/images/MHA_logo_testo.svg">
+    </iron-image>
+  </div>
+ 
+
+
+  </app-drawer-layout>
+  </template>
+  <script>
+  Polymer({
+    is: 'my-app-home',
+    accedi:function(){
+     
+      window.location.href = '/accedi';
+    },
+    handleResponse: function (e) {
+            console.log(e.detail.response);
+        },
+    _dialogClosed: function(element) {
+    },
+  });
+
+
+
+  /**
+  * Popup stuff depending on the current page.
+  */
+  function handlePages(){
+    // POPUP STUFF
+
+    if (window.location.pathname==HOME_PAGE){
+      changeTitlePage(HOME_TITLE);
+    }
+    if (window.location.pathname==ACCEDI_PAGE){
+      document.getElementById("accedi").click();
+    }
+    if (window.location.pathname==REGISTRATI_PAGE){
+      document.getElementById("registrati").click();
+    }
+    if (window.location.pathname==REG_USER_PAGE){
+      registratiDatiUtente(document.querySelector("my-app-registrazione-dati-utente"));
+    }
+    if (window.location.pathname==REG_WORKER_PAGE){
+      registratiDatiLavoratore(document.querySelector("my-app-registrazione-dati-lavoratore"));
+    }
+  }
+ /* function accedi(element){
+    changeUrl(ACCEDI_TITLE,ACCEDI_PAGE);
+    document.getElementById('accedi').style.color="black";
+  //  document.getElementById('accediDialog').close();
+   // document.getElementById('registratiDatiLavoratoreDialog').close();
+    //document.getElementById('registratiDialog').close();
+    //document.getElementById('registratiDatiUtenteDialog').close();
+    //var accedi=document.querySelector("#accedi-component");
+   // accedi.positionTarget = element;
+   // accedi.sizingTarget = element;
+   // accedi.open();
+	
+  }*/
+  function registrati(element){
+    changeUrl(REGISTRATI_TITLE,REGISTRATI_PAGE);
+    document.getElementById('registrati').style.color="black";
+  //  document.getElementById('accediDialog').close();
+   // document.getElementById('registratiDatiLavoratoreDialog').close();
+  //  document.getElementById('registratiDialog').close();
+    //document.getElementById('registratiDatiUtenteDialog').close();
+    var registrati=document.querySelector("#registrati-component");
+    registrati.positionTarget = element;
+    registrati.sizingTarget = element;
+    registrati.open();
+  }
+  function registratiDatiLavoratore(element){
+    changeUrl(REG_WORKER_TITLE,REG_WORKER_PAGE);
+    document.getElementById('registrati').style.color="black";
+    //document.getElementById('accediDialog').close();
+    //document.getElementById('registratiDatiLavoratoreDialog').close();
+    //document.getElementById('registratiDialog').close();
+    //document.getElementById('registratiDatiUtenteDialog').close();
+    var registrati=document.querySelector("#registrati-dati-lavoratore-component");    
+    registrati.positionTarget = element;
+    registrati.sizingTarget = element;
+    registrati.open();
+  }
+  function registratiDatiUtente(element){
+    changeUrl(REG_USER_TITLE,REG_USER_PAGE);
+    document.getElementById('registrati').style.color="black";
+    //document.getElementById('accediDialog').close();
+    //document.getElementById('registratiDatiLavoratoreDialog').close();
+    //document.getElementById('registratiDialog').close();
+    //document.getElementById('registratiDatiUtenteDialog').close();
+    var registrati=document.querySelector("#registrati-dati-utente-component");    
+    registrati.positionTarget = element;
+    registrati.sizingTarget = element;
+    registrati.open();
+  }
+  function codiceEmail(element,_id,_idUser){
+    var template = document.querySelector('#codeMail');
+   template.codeMail = {id: _id};
+    changeUrl(CODICE_MAIL_TITLE,CODICE_EMAIL);
+    document.getElementById('registrati').style.color="black";
+   // document.getElementById('accediDialog').close();
+    //document.getElementById('registratiDatiLavoratoreDialog').close();
+    //document.getElementById('registratiDialog').close();
+    //document.getElementById('registratiDatiUtenteDialog').close();
+    codiceMailDialog.positionTarget= element;
+    codiceMailDialog.sizingTarget=element;
+    codiceMailDialog.open();
+    document.querySelector('#getCodeMail').generateRequest();
+  }
+
+  window.addEventListener('WebComponentsReady', function(e) {
+        handlePages();
+  });
+  </script>
+</dom-module>
